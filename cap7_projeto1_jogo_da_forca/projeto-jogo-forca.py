@@ -30,3 +30,35 @@ def game():
 
     # List comprehension
     letras_descobertas = ['_' for letra in palavra]
+
+    # Número de chances
+    chances = 6
+
+    # Lista para as letras erradas
+    letras_erradas = []
+
+    while chances > 0:
+
+        # Imprime o texto da forca
+        print(" ".join(letras_descobertas)) # join - faz uma junção de strings do que está no lado esquerdo com o lado direito
+        print("\nChances restantes:", chances)
+        print("Letras erradas:", " ".join(letras_erradas))
+
+        # Tentativa
+        tentativa = input("\nDigite uma letra: ").lower() # lower - converte todas as letras para minúsculas
+
+        # Condicional - Checando cada tentativa
+        if tentativa in palavra:
+            index = 0 
+
+            # Para cada letra dentro da palavra, vou verificar se a tentativa é igual a letra
+            for letra in palavra:
+                if tentativa == letra:
+                    letras_descobertas[index] = letra
+                index += 1
+        else:
+            chances -= 1
+            letras_erradas.append(tentativa)
+    
+        
+game()
