@@ -1,0 +1,34 @@
+INÍCIO
+    Definir uma PALAVRA_SECRETA
+    Criar uma LISTA de LETRAS_CORRETAS com o mesmo tamanho da PALAVRA_SECRETA preenchida com "_"
+    Definir um número máximo de TENTATIVAS
+    Inicializar TENTATIVAS_RESTANTES com o número máximo de TENTATIVAS
+    Criar uma LISTA de LETRAS_ERRADAS vazia
+
+    ENQUANTO TENTATIVAS_RESTANTES > 0 E a PALAVRA_SECRETA não estiver completamente revelada FAÇA
+        Exibir LISTA de LETRAS_CORRETAS
+        Exibir LETRAS_ERRADAS
+        Pedir ao jogador para inserir uma LETRA
+
+        SE a LETRA já foi usada ENTÃO
+            Exibir "Você já tentou essa letra. Escolha outra."
+            CONTINUAR para a próxima iteração do loop
+        FIM_SE
+
+        SE a LETRA estiver na PALAVRA_SECRETA ENTÃO
+            Para cada posição da PALAVRA_SECRETA onde a LETRA aparecer, substituir "_" por essa LETRA na LISTA de LETRAS_CORRETAS
+        SENÃO
+            Adicionar LETRA à LISTA de LETRAS_ERRADAS
+            Diminuir TENTATIVAS_RESTANTES em 1
+        FIM_SE
+
+        Exibir "Tentativas restantes: " + TENTATIVAS_RESTANTES
+    FIM_ENQUANTO
+
+    SE a PALAVRA_SECRETA estiver completamente revelada ENTÃO
+        Exibir "Parabéns! Você venceu!"
+    SENÃO
+        Exibir "Fim de jogo! A palavra era: " + PALAVRA_SECRETA
+    FIM_SE
+FIM
+
