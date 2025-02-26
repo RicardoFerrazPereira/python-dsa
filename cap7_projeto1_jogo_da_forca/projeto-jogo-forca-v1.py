@@ -58,7 +58,21 @@ def game():
                 index += 1
         else:
             chances -= 1
-            letras_erradas.append(tentativa)
+            letras_erradas.append(tentativa) # append só pode ser usado em lista
+
+        # Condicional
+        # Se o _ não estiver na lista de letras descobertas, o usuário venceu
+        if "_" not in letras_descobertas:
+            print("\nVocê venceu, a palavra era:", palavra)
+            break
     
         
-game()
+    # Condicional
+    # Se o _ estiver na lista de letras descobertas, o usuário perdeu
+    if "_" in letras_descobertas:
+        print("\nVocê perdeu, a palavra era:", palavra)
+
+# Bloco main -> dizer ao interpretador que isso é um código python
+if __name__ == "__main__":
+    game()
+    print("\nParabéns")
